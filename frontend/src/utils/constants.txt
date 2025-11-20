@@ -1,0 +1,8 @@
+## Add your API endpoints and Keys (save constants.js )
+
+export const OMDB_API_URL =  // omdb-api-key
+export const IMDB_TRENDING_URL = // IMDB(via rapid)-api-key
+export const RAPIDAPI_HEADERS = // IMDB(via rapid)-api-key
+  
+
+export const YOUTUBE_API_KEY =  //yt api key
