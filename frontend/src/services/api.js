@@ -1,4 +1,10 @@
-import { OMDB_API_URL, IMDB_TRENDING_URL, RAPIDAPI_HEADERS, YOUTUBE_API_KEY } from '../utils/constants';
+import {
+    OMDB_BASE_URL,
+    OMDB_API_KEY,
+    IMDB_TRENDING_URL,
+    RAPIDAPI_HEADERS,
+    YOUTUBE_API_KEY
+} from '../utils/constants';
 
 // Fetch trending movies from IMDB API
 export const fetchTrendingMovies = async () => {
@@ -16,7 +22,7 @@ export const fetchTrendingMovies = async () => {
             const movieDetails = await Promise.all(
                 movieIds.map(async (id) => {
                     const imdbId = id.split("/")[2]; // "/title/tt1234567/" → "tt1234567"
-                    const res = await fetch(`${OMDB_API_URL}&i=${imdbId}`);
+                    const res = await fetch(`${OMDB_BASE_URL}?apikey=${OMDB_API_KEY}&i=${imdbId}`);
                     return res.json();
                 })
             );
@@ -32,7 +38,7 @@ export const fetchTrendingMovies = async () => {
 // Search movies by title
 export const searchMovies = async (title) => {
     try {
-        const response = await fetch(`${OMDB_API_URL}&s=${title}`);
+        const response = await fetch(`${OMDB_BASE_URL}?apikey=${OMDB_API_KEY}&s=${title}`);
         const data = await response.json();
         console.log(data); // show data in console
 
@@ -49,7 +55,7 @@ export const searchMovies = async (title) => {
 // Fetch detailed information for a specific movie
 export const fetchMovieDetails = async (imdbID) => {
     try {
-        const response = await fetch(`${OMDB_API_URL}&i=${imdbID}&plot=full`);
+        const response = await fetch(`${OMDB_BASE_URL}?apikey=${OMDB_API_KEY}&i=${imdbID}&plot=full`);
         const data = await response.json();
         console.log(data); // show data in console
         return data;
@@ -59,7 +65,7 @@ export const fetchMovieDetails = async (imdbID) => {
     }
 };
 
-//Method using YouTube Data API directly 
+// Method using YouTube Data API directly
 export const fetchYouTubeTrailer = async (movieTitle, year) => {
     try {
         // Format search query to include movie title and year for better results
