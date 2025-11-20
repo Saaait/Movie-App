@@ -80,8 +80,7 @@ http://localhost:3000
 ```
 
 ## 📚 Usage
-
-- Browse movies by category (popular, trending, etc.)  
+ 
 - Search for a movie by name  
 - Click on a movie to see its details (plot, rating, release date, etc.)
 
