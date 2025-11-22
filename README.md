@@ -12,7 +12,7 @@ A React-based movie application that allows users to browse, search, and view mo
 ## 🛠 Tech Stack
 
 - **Frontend**: React (JavaScript)  
-- **State Management**: (e.g., React Hooks, Context API — adjust if you use something else)  
+- **State Management**: (e.g., React Hooks, Context API)  
 - **Data Source**: External Movie API (e.g. The Movie Database API)
 
 ## 📂 Project Structure
